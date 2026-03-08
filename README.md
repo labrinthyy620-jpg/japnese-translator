@@ -1,2 +1,68 @@
-# japnese-translator
-Pronounce the Japanese texts automatically, provide translation in Chinese and German
+# 日语翻译与发音应用（纯前端版）
+
+一个纯前端的日语翻译应用，支持平假名标注、中文翻译和日语朗读功能。**无需后端服务器，直接打开即可使用！**
+
+## 功能特性
+
+- ✨ **平假名标注**：自动为日语汉字标注平假名读音
+- 🌏 **中文翻译**：将日语翻译成中文（使用 MyMemory 免费翻译API）
+- 🔊 **语音朗读**：使用浏览器原生 TTS 朗读日语
+- 📝 **词汇详情**：显示每个词汇的词性和读音
+- 🚀 **纯前端**：无需后端服务器，打开即用
+
+## 技术栈
+
+- **前端**：React + Vite
+- **日语处理**：kuromoji（浏览器版，通过CDN加载）
+- **翻译**：MyMemory Translation API（免费，无需API key）
+- **语音合成**：Web Speech API
+
+## 安装与运行
+
+### 方式一：开发模式
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+然后访问 `http://localhost:5173`
+
+### 方式二：构建生产版本
+
+```bash
+cd frontend
+npm install
+npm run build
+```
+
+构建完成后，直接打开 `dist/index.html` 即可使用！
+
+## 使用方法
+
+1. 等待页面加载完成（分词器初始化需要几秒）
+2. 在文本框中输入日语文本
+3. 点击"翻译并标注"按钮
+4. 查看平假名标注和中文翻译
+5. 点击"朗读"按钮听取日语发音
+6. 点击"停止"按钮停止朗读
+
+## 示例
+
+输入：`日本語を勉強しています`
+
+输出：
+- 平假名标注：にほんご を べんきょう しています
+- 中文翻译：正在学习日语
+
+## 注意事项
+
+- 首次加载时，kuromoji 词典需要从 CDN 加载，可能需要几秒钟
+- 语音朗读功能依赖浏览器的 Web Speech API 支持
+- 翻译功能使用免费的 MyMemory API，每日有请求限制
+- 建议使用 Chrome、Firefox 或 Safari 最新版本
+
+## 许可证
+
+MIT
